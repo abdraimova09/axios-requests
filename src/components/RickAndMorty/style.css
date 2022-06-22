@@ -1,0 +1,8 @@
+.card {
+  border: 1px solid grey;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
