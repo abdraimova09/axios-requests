@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ item }) {
+export default function ProductCard({ item, deleteProduct }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -25,9 +25,14 @@ export default function ProductCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Delete</Button>
+        <Button onClick={() => deleteProduct(item.id)} size="small">
+          Delete
+        </Button>
         <Link to={`/edit/${item.id}`}>
           <Button size="small">Edit</Button>
+        </Link>
+        <Link to={`/details/${item.id}`}>
+          <Button size="small">Details</Button>
         </Link>
       </CardActions>
     </Card>
